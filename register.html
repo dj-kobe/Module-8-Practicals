@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#111827" />
+	<title>Register | CodeTribe Tech Conference</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html"><span>&lt;/&gt;</span>CodeTribe</a>
+		<nav aria-label="Main navigation">
+			<a href="about.html">About</a>
+			<a href="speakers.html">Speakers</a>
+			<a href="venue.html">Venue</a>
+			<a class="nav-cta" href="register.html" aria-current="page">Get tickets</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="register-page-hero">
+			<p class="eyebrow">12–13 November 2026 · Kimberley</p>
+			<h1>Save your <em>seat.</em></h1>
+			<p>Join developers, creators and curious minds for two practical days of technology, ideas and connection.</p>
+		</section>
+
+		<section class="register-page-form section">
+			<div class="register-page-intro">
+				<p class="eyebrow">Registration</p>
+				<h2>Let’s get you there.</h2>
+				<p>Registration is free for students and R350 for professionals. Complete the form and we’ll keep your details ready for the conference.</p>
+				<p class="register-detail"><strong>Venue</strong><br />Galeshewe SMME Village<br />39 Tyala Street, Vergenoeg<br />Kimberley, South Africa</p>
+			</div>
+
+			<form action="index.html" method="get">
+				<label for="full-name">Full name</label>
+				<input id="full-name" name="name" type="text" placeholder="Your full name" required minlength="3" />
+				<label for="email">Email address</label>
+				<input id="email" name="email" type="email" placeholder="you@example.com" required />
+				<label for="phone">Phone number</label>
+				<input id="phone" name="phone" type="tel" placeholder="+27" required />
+				<label for="age">Age</label>
+				<input id="age" name="age" type="number" placeholder="Your age" min="18" required />
+				<label for="province">Province</label>
+				<input id="province" name="province" type="text" placeholder="Your province" required />
+				<label for="attendance">Attendance type</label>
+				<select id="attendance" name="attendance" required>
+					<option value="">Choose attendance type</option>
+					<option>In person</option>
+					<option>Virtual</option>
+				</select>
+				<label for="ticket">Ticket type</label>
+				<select id="ticket" name="ticket" required>
+					<option value="">Choose a ticket</option>
+					<option>Student — Free</option>
+					<option>Professional — R350</option>
+				</select>
+				<button class="button button-primary" type="submit">Register now <span>→</span></button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<a class="brand" href="index.html"><span>&lt;/&gt;</span>CodeTribe</a>
+		<p>Tech Conference 2026 · Made for the future.</p>
+	</footer>
+</body>
+</html>
