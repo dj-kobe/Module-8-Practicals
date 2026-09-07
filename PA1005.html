@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Conference Venue Map</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        color: #202124;
+      }
+      svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-top: 1rem;
+      }
+      .venue-area {
+        cursor: pointer;
+        transition:
+          fill 0.2s,
+          stroke-width 0.2s;
+      }
+      .venue-area:hover,
+      .venue-area:focus {
+        fill: #f9c74f;
+        stroke-width: 4;
+        outline: none;
+      }
+      .venue-area.selected {
+        fill: #f9844a;
+        stroke: #9d0208;
+        stroke-width: 4;
+      }
+      #venue-info {
+        min-height: 1.5rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conference Venue Map</h1>
+   
+    <svg
+      width="700"
+      height="500"
+      viewBox="0 0 700 500"
+      role="img"
+      aria-labelledby="map-title map-description"
+    >
+      <title id="map-title">Interactive conference venue map</title>
+      <desc id="map-description">
+        Click a venue area to display information about it.
+      </desc>
+      <rect
+        x="50"
+        y="60"
+        width="600"
+        height="300"
+        fill="#e9ecef"
+        stroke="#212529"
+        stroke-width="2"
+      />
+      <rect
+        class="venue-area"
+        data-info="Registration Area: Collect your name badge and conference pack here."
+        x="200"
+        y="60"
+        width="280"
+        height="50"
+        fill="#90dbf4"
+        stroke="#212529"
+        stroke-width="2"
+        tabindex="0"
+        role="button"
+        aria-label="Registration Area"
+      />
+      <rect
+        class="venue-area"
+        data-info="Food Area: Refreshments and lunch are served here."
+        x="200"
+        y="310"
+        width="280"
+        height="50"
+        fill="#90dbf4"
+        stroke="#212529"
+        stroke-width="2"
+        tabindex="0"
+        role="button"
+        aria-label="Food Area"
+      />
+      <rect
+        class="venue-area"
+        data-info="Stage: Presentations and keynote talks take place here."
+        x="50"
+        y="150"
+        width="80"
+        height="120"
+        fill="#90dbf4"
+        stroke="#212529"
+        stroke-width="2"
+        tabindex="0"
+        role="button"
+        aria-label="Stage"
+      />
+      <circle
+        class="venue-area"
+        data-info="Seating Area: Take a seat here for the conference sessions."
+        cx="350"
+        cy="210"
+        r="80"
+        fill="#b388eb"
+        stroke="#212529"
+        stroke-width="2"
+        tabindex="0"
+        role="button"
+        aria-label="Seating Area"
+      />
+      <text x="265" y="92" font-size="20">Registration Area</text>
+      <text x="300" y="343" font-size="20">Food Area</text>
+      <text x="68" y="215" font-size="18">Stage</text>
+      <text x="307" y="217" font-size="22">Seating</text>
+    </svg>
+
+    <p id="venue-info" role="status" aria-live="polite">
+      Select an area on the map.
+    </p>
+
+    <script>
+      const venueInfo = document.getElementById("venue-info");
+      const venueAreas = document.querySelectorAll(".venue-area");
+
+      function selectArea(area) {
+        venueAreas.forEach((venue) => venue.classList.remove("selected"));
+        area.classList.add("selected");
+        venueInfo.textContent = area.dataset.info;
+      }
+
+      venueAreas.forEach((area) => {
+        area.addEventListener("click", () => selectArea(area));
+        area.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectArea(area);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

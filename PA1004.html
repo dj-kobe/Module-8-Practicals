@@ -1,0 +1,52 @@
+<!--Create a speaker badge using canvas-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Badge</title>
+</head>
+<body>
+    <canvas id="speakerBadge" width="600" height="340" style="border:1px solid #172033; max-width:100%; height:auto;">
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById("speakerBadge");
+        const ctx = canvas.getContext("2d");
+
+        // Draw the badge background
+        ctx.fillStyle = "#172033";
+        ctx.fillRect(0, 0, 600, 340);
+
+        // Add colourful accent shapes
+        ctx.fillStyle = "#d8fa55";
+        ctx.beginPath();
+        ctx.arc(555, 45, 82, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ff785a";
+        ctx.fillRect(0, 270, 600, 70);
+        ctx.fillStyle = "#b7daf7";
+        ctx.fillRect(0, 0, 16, 270);
+
+        // Draw the event label
+        ctx.fillStyle = "#d8fa55";
+        ctx.font = "bold 18px Arial";
+        ctx.fillText("CODETRIBE CONFERENCE 2026", 42, 58);
+
+        // Draw the speaker name
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 54px Arial";
+        ctx.fillText("Zandile Zulu", 42, 155);
+
+        // Draw the title
+        ctx.fillStyle = "#b7daf7";
+        ctx.font = "28px Arial";
+        ctx.fillText("Senior Developer", 42, 205);
+
+        // Draw the speaker label
+        ctx.fillStyle = "#172033";
+        ctx.font = "bold 20px Arial";
+        ctx.fillText("SPEAKER", 42, 315);
+    </script>
+</body>
+</html>
