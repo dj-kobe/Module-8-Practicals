@@ -1,14 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input type="text" placeholder="Enter username" id="Username">
-    <button onclick="SaveDataLocally()">Save Data Locally</button>
-    <script src="PA0801.js"></script>
-   
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>CodeTribe Tech Conference 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span>&lt;/&gt;</span>CodeTribe</a>
+      <nav aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="venue.html">Venue</a>
+        <a class="nav-cta" href="register.html">Get tickets</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Kimberley · 12–13 November 2026</p>
+          <h1>Build what’s <em>next.</em></h1>
+          <p class="intro">
+            Welcome to the Codetribe Tech Conference<br>
+            <br>
+            Two vivid days of practical ideas, brilliant people and the
+            technology shaping tomorrow.
+          </p>
+          <div class="hero-actions">
+            <button id="welcome-button" class="button button-primary" type="button">
+              Show welcome message <span>&rarr;</span>
+            </button>
+            <a class="button button-primary" href="register.html"
+              >Reserve your place <span>→</span></a
+            ><a class="button button-quiet" href="speakers.html"
+              >Meet the speakers</a
+            >
+          </div>
+          <p id="welcome-message" class="welcome-message" aria-live="polite"></p>
+        </div>
+        <aside class="event-card" aria-label="Conference details">
+          <p class="card-label">Mark your calendar</p>
+          <div class="event-date">
+            <strong>12</strong>
+            <div><span>NOVEMBER</span><b>Thursday</b></div>
+          </div>
+          <div class="event-card-footer">
+            <span>08:30 — 17:00</span><span>Galeshewe SMME Village, Kimberley</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="about section">
+        <p class="eyebrow">The conference</p>
+        <div class="section-heading">
+          <h2>Ideas with real-world impact.</h2>
+          <p>
+            CodeTribe brings developers, creators and curious minds together to
+            explore the tools, habits and human stories that make exceptional
+            technology possible.
+          </p>
+        </div>
+        <div class="stats">
+          <div><strong>2</strong><span>inspiring days</span></div>
+          <div><strong>16</strong><span>expert speakers</span></div>
+          <div><strong>500+</strong><span>fellow builders</span></div>
+          <div><strong>12</strong><span>hands-on sessions</span></div>
+        </div>
+      </section>
+
+      <section id="speakers" class="section speakers">
+        <p class="eyebrow">On the stage</p>
+        <div class="title-row">
+          <h2>Voices worth hearing.</h2>
+          <button id="speaker-button" class="text-button">
+            Show all speakers →
+          </button>
+        </div>
+        <div class="speaker-grid" id="speaker-grid">
+          <article class="speaker-card orange">
+            <div class="avatar">ZZ</div>
+            <h3>Zandile Zulu</h3>
+            <p>AI Product Lead · Zandi Labs</p>
+          </article>
+          <article class="speaker-card blue">
+            <div class="avatar">TL</div>
+            <h3>Tshepo Louw</h3>
+            <p>Developer Advocate · GitHub</p>
+          </article>
+          <article class="speaker-card green">
+            <div class="avatar">KM</div>
+            <h3>Kamogelo Mokgweetsi</h3>
+            <p>Founder · Rooted Design</p>
+          </article>
+          <article class="speaker-card purple hidden-speaker">
+            <div class="avatar">TM</div>
+            <h3>Thabang Makhosane</h3>
+            <p>Cloud Architect · Azure</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="venue" class="venue section">
+        <div>
+          <p class="eyebrow">Find us</p>
+          <h2>A home for big thinking.</h2>
+          <p>
+            Galeshewe SMME Village<br />39 Tyala Street, Vergenoeg<br />Kimberley,
+            South Africa
+          </p>
+          <div class="venue-actions">
+            <button id="location-button" class="button button-dark">
+              Use my location</button
+            ><span id="location-status" aria-live="polite"></span>
+          </div>
+        </div>
+        <div
+          class="map"
+          role="img"
+          aria-label="Interactive illustrated venue map"
+        >
+          <svg viewBox="0 0 500 310" aria-hidden="true">
+            <path d="M-20 220 C110 160 155 280 280 185 S420 120 540 210" />
+            <path d="M45 -10 C100 80 210 88 282 18 S400 12 520 80" />
+            <path class="minor" d="M110 330 C160 210 270 210 330 315" />
+            <circle cx="264" cy="157" r="28" />
+            <path
+              class="pin"
+              d="M264 104c-18 0-32 14-32 32 0 24 32 57 32 57s32-33 32-57c0-18-14-32-32-32z"
+            />
+            <circle class="pin-dot" cx="264" cy="136" r="9" />
+          </svg>
+          <div class="map-label">
+            <b>Galeshewe SMME Village</b><span>Conference venue</span>
+          </div>
+        </div>
+      </section>
+
+      <!--PA0301 Registration form-->
+      <section id="register" class="register section">
+        <div>
+          <p class="eyebrow">Join us</p>
+          <h2>Your seat is waiting.</h2>
+          <p>
+            Registration is free for students and R350 for professionals. Save
+            your details locally and pick up where you left off.
+          </p>
+          <div class="live-message" id="live-message" aria-live="polite">
+            <span class="pulse"></span>
+            <span>Live: Workshops are almost full.</span>
+          </div>
+        </div>
+        <form id="registration-form" novalidate>
+          <label
+            >Full name<input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              required
+          /></label>
+          <button onclick="ValidateForm()">Enter</button>
+          <label
+            >Email address<input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+          /></label>
+          <button onclick="ValidateForm()">Enter</button>
+          <label
+            >Phone Number<input
+              id="phone"
+              name="phone"
+              type="phone"
+              placeholder="+27"
+              required
+              minlength="1"
+              maxlength="10"
+          /></label><label
+            >Age<input
+              id="age"
+              name="age"
+              type="age"
+              placeholder="Enter your age"
+              required
+          /></label>
+          <button onclick="ValidateForm()">Enter</button>
+          <label
+            >Province<input
+              id="prov"
+              name="prov"
+              type="prov"
+              placeholder="Enter your province"
+              required
+          /></label>
+          <label
+            >Attendance Type<input
+              id="att"
+              name="att"
+              type="att"
+              placeholder="Attendance"
+              required
+    
+
+          /></label>
+          <label
+            >Attendance interest<select id="ticket" name="ticket" required>
+              <option value="">Select Interest</option>
+              <option>Interested</option>
+              <option>Not Interested</option>
+            </select></label
+          >
+          <label
+            >Ticket type<select id="ticket" name="ticket" required>
+              <option value="">Select a ticket</option>
+              <option>Student — Free</option>
+              <option>Professional — R350</option>
+            </select></label
+          >
+          <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+          <button class="button button-primary" type="submit">
+            Register now <span>→</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="tools section">
+        <p class="eyebrow">Your conference kit</p>
+        <h2>Make it yours.</h2>
+        <div class="tool-grid">
+          <article>
+            <h3>Conference badge</h3>
+            <canvas id="badge" width="520" height="240"
+              >Your browser does not support canvas.</canvas
+            ><button id="badge-button" class="text-button">
+              Generate my badge →
+            </button>
+          </article>
+          <article>
+            <h3>Session planner</h3>
+            <p>
+              Planning multiple talks? Try a calculation in a background worker.
+            </p>
+            <button id="worker-button" class="button button-dark">
+              Calculate schedule
+            </button>
+            <p id="worker-result" class="worker-result" aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="index.html"><span>&lt;/&gt;</span>CodeTribe</a>
+      <p>Tech Conference 2026 · Made for the future.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
